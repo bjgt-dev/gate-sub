@@ -30,28 +30,45 @@ def fetch(url):
     with urlopen(req, timeout=TIMEOUT) as r:
         return r.read().decode("utf-8", "replace")
 
+def val(row, key):
+    """DictReader 取值：列缺失或行有多余字段时不抛错、不返回 list。"""
+    if not key:
+        return ""
+    v = row.get(key)
+    if isinstance(v, list):
+        v = "".join(v)
+    return (v or "").strip()
+
 def candidate_ips():
     text = fetch(VPNGATE_API).lstrip("\ufeff")
     if len(text) < 1000:
         raise RuntimeError(f"上游返回过短（{len(text)} 字节），可能被拒")
-    reader = csv.DictReader(io.StringIO(text))
+    # 表头行可能不在第一行（前面有 # 注释行），先定位（与 Worker 逻辑一致）
+    lines = text.splitlines()
+    hi = next((i for i, l in enumerate(lines)
+               if l.strip().lstrip("#").startswith("HostName")), None)
+    if hi is None:
+        raise RuntimeError("无表头")
+    reader = csv.DictReader(io.StringIO("\n".join(lines[hi:])))
+    if not reader.fieldnames:
+        raise RuntimeError("表头解析失败")
     # 表头形如 "#HostName"，做规范化
-    fields = {k: k for k in (reader.fieldnames or [])}
     def col(*names):
         for k in reader.fieldnames:
             nk = k.strip().lstrip("#").lstrip("*").lower()
             if nk in names: return k
         return None
     c_host, c_ip = col("hostname"), col("ip")
-    c_cc = col("countryshort")
+    if not c_host or not c_ip:
+        raise RuntimeError("表头缺失 hostname/ip 列")
     c_cfg = col("openvpn_configdata_base64") or next(
         (k for k in reader.fieldnames if "base64" in k.lower()), reader.fieldnames[-1])
     ips, seen = [], set()
     for row in reader:
-        ip = (row.get(c_ip) or "").strip()
-        if not ip or ip in seen: continue
+        ip = val(row, c_ip)
+        if not ip or ip == "*" or ip in seen: continue
         try:
-            cfg = base64.b64decode((row.get(c_cfg) or "").strip()).decode("utf-8", "replace")
+            cfg = base64.b64decode(val(row, c_cfg)).decode("utf-8", "replace")
         except Exception:
             continue
         if not re.search(r"^proto\s+(tcp|tcp4|tcp6)\b", cfg, re.M):
