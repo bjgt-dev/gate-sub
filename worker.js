@@ -566,7 +566,9 @@ export default {
       let hitQ = null;
       try { hitQ = await cache.match(keys.quality); } catch (_) {}
       if (!hitQ) {
-        return new Response('quality 数据尚未生成：先请求一次 /sub 再回来\n', { status: 503, headers: { 'content-type': 'text/plain; charset=utf-8' } });
+        // 冷 colo 自愈：触发一次后台构建，下次访问就有数据
+        if (ctx && ctx.waitUntil) ctx.waitUntil(triggerBackgroundRefresh(cache, keys, cfg, buildBlocklist(env.BLOCKLIST_HOSTS)));
+        return new Response('quality 数据正在生成：稍后回来刷新\n', { status: 503, headers: { 'content-type': 'text/plain; charset=utf-8' } });
       }
       let rows = [];
       try { rows = (await hitQ.json()).rows || []; } catch (_) {}
