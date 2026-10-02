@@ -25,6 +25,9 @@ from verify_ip import classify_ip, load_asn_table as _load_table, norm_asn
 VPNGATE_API = "https://www.vpngate.net/api/iphone/"
 OUT = "ip-quality.json"
 OVERRIDES = "overrides.json"
+MAX_IPS = 120            # 单轮最多富集 IP 数（v3-final）
+VERDICT_TTL_DAYS = 90    # verdict 有效期（v3-final）
+FREEZE_CAP_DAYS = 7      # 冻结上限（v3-final）
 
 now = datetime.now(timezone.utc)
 now_s = now.isoformat(timespec="seconds")
