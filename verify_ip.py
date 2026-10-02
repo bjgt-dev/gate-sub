@@ -105,6 +105,7 @@ def load_asn_table(local_path=LOCAL_ASN_TABLE):
                 f.write("\n".join(sorted(merged, key=int)) + "\n")
         except Exception:
             pass
+        load_asn_table.last_source = "merged-upstream"
         return merged
     # 回退本地
     try:
@@ -114,9 +115,13 @@ def load_asn_table(local_path=LOCAL_ASN_TABLE):
         age_days = (time.time() - os.path.getmtime(local_path)) / 86400
         if len(local) < 100 or age_days > ASN_TABLE_MAX_AGE_DAYS:
             raise RuntimeError(f"本地表不可用（{len(local)} 条，{age_days:.0f} 天）")
+        load_asn_table.last_source = "local-fallback"
         return local
     except Exception as e:
         raise RuntimeError(f"ASN 表不可用（上游 {ok}/3）：{e}")
+
+
+load_asn_table.last_source = "unknown"  # 供调用方判断是否回退本地（P2-2 连续回退告警）
 
 
 def _get_asn_geo(ip):
