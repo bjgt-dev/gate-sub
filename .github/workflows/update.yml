@@ -1,0 +1,40 @@
+name: Update Subscription
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Update subscription
+        env:
+          SUB_UUID: ${{ secrets.SUB_UUID }}
+          EDT_DOMAIN: ${{ secrets.EDT_DOMAIN }}
+          CHECK_WORKER: ${{ secrets.CHECK_WORKER }}
+        run: |
+          export SUB_UUID=${SUB_UUID:-49e5bfce-7063-4a37-a825-9bf9890955f5}
+          export EDT_DOMAIN=${EDT_DOMAIN:-gate-edt.tianzy2017.workers.dev}
+          export CHECK_WORKER=${CHECK_WORKER:-https://gate-check.tianzy2017.workers.dev}
+          python3 update_sub.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sub.txt
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Auto-update subscription $(date -u +%Y-%m-%d)"
+            git push
+          fi
