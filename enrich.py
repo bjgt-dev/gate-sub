@@ -20,37 +20,16 @@ from datetime import datetime, timezone, timedelta
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout
+from verify_ip import classify_ip, load_asn_table as _load_table, norm_asn
 
 VPNGATE_API = "https://www.vpngate.net/api/iphone/"
-IPQUERY = "https://api.ipquery.io/{ip}?format=json"
-IPWHOIS = "https://ipwho.is/{ip}"
-IPINFO = "https://ipinfo.io/{ip}/json"
-OUT = "ip-quality.json"
-OVERRIDES = "overrides.json"
-LOCAL_ASN_TABLE = "hosting-asn.local.txt"
-
-ASN_TABLE_URLS = [
-    "https://raw.githubusercontent.com/danielnavcom/bad-asn-list-1/master/all.txt",
-    "https://raw.githubusercontent.com/on13uka/ip-geolocation-api/main/data/hosting-asns.json",
-    "https://raw.githubusercontent.com/Mizarka/scraper-blacklist/master/hosting-asn.txt",
-]
-ASN_TABLE_MAX_AGE_DAYS = 30
-VERDICT_TTL_DAYS = 90
-FREEZE_CAP_DAYS = 7
-STALE_META_WARN_DAYS = 3
-REQ_DELAY = 1.2
-TIMEOUT = 15
-PTR_TIMEOUT = 8
-MAX_IPS = 200  # 每轮最多判定 IP 数（覆盖全量列表 80 行绰绰有余）
-
-# hostname 启发式词表（v3-final：host 已移出机房词；机房词用词边界匹配）
-RESIDENTIAL_WORDS = ["ppp", "dsl", "cable", "fiber", "dyn", "bb", "residential"]
-DATACENTER_WORDS = ["vpngate", "vps", "cloud", "datacenter", "hosting"]
-DATACENTER_RE = re.compile(r"(?<![a-z0-9])(?:%s)(?![a-z0-9])" % "|".join(DATACENTER_WORDS))
 
 now = datetime.now(timezone.utc)
 now_s = now.isoformat(timespec="seconds")
 ALERTS = []
+
+TIMEOUT = 15
+REQ_DELAY = 1.2  # API 间隔（秒），防 429
 
 
 def alert(msg):
@@ -64,162 +43,15 @@ def fetch(url, timeout=TIMEOUT):
         return r.read().decode("utf-8", "replace")
 
 
-def norm_asn(raw):
-    """ASN 归一化：'AS15169'/15169/'15169' -> '15169'；无效 -> None。"""
-    if raw is None:
-        return None
-    s = str(raw).strip().upper().lstrip("AS").strip()
-    return s if s.isdigit() else None
-
-
 def load_asn_table():
-    """拉取 3 个上游表并合并。quorum：3/3 成功才用；否则回退本地表（age<=30d）；
-    都不可用 -> fail-closed（抛错，整批不下结论）。返回 (set_of_asn_str, version_info)。"""
-    merged, versions = set(), []
-    ok = 0
-    for url in ASN_TABLE_URLS:
-        try:
-            text = fetch(url)
-            if url.endswith(".json"):
-                d = json.loads(text)
-                provs = d.get("providers", {})
-                nums = set()
-                for p in provs.values():
-                    for a in p.get("asns", []):
-                        n = norm_asn(a)
-                        if n:
-                            nums.add(n)
-            else:
-                nums = set()
-                for line in text.splitlines():
-                    line = line.strip()
-                    if not line or line.startswith("#"):
-                        continue
-                    m = re.match(r"^(?:AS)?(\d+)\b", line, re.I)
-                    if m:
-                        nums.add(m.group(1))
-            # schema 校验：非空且行数>100
-            if len(nums) < 100:
-                raise RuntimeError(f"表过小（{len(nums)}），疑似损坏")
-            merged |= nums
-            versions.append({"url": url, "count": len(nums),
-                             "sha256": hashlib.sha256(text.encode()).hexdigest()[:16]})
-            ok += 1
-        except Exception as e:
-            print(f"  ASN 表拉取失败 {url}: {e}")
-    if ok == 3:
-        # 写本地缓存
-        with open(LOCAL_ASN_TABLE, "w") as f:
-            f.write("\n".join(sorted(merged, key=int)) + "\n")
-        return merged, {"source": "upstream", "tables": versions,
-                        "merged": len(merged), "at": now_s}
-    # 回退本地
-    try:
-        with open(LOCAL_ASN_TABLE) as f:
-            local = {n for n in (norm_asn(l) for l in f) if n}
-        import os
-        age_days = (now - datetime.fromtimestamp(os.path.getmtime(LOCAL_ASN_TABLE),
-                                                 tz=timezone.utc)).days
-        if len(local) < 100 or age_days > ASN_TABLE_MAX_AGE_DAYS:
-            raise RuntimeError(f"本地表不可用（{len(local)} 条，{age_days} 天）")
-        print(f"  上游表 {ok}/3，回退本地表（{len(local)} 条，{age_days} 天前）")
-        return local, {"source": "local-fallback", "merged": len(local),
-                       "age_days": age_days, "at": now_s}
-    except Exception as e:
-        raise RuntimeError(f"ASN 表不可用（上游 {ok}/3，本地回退失败：{e}），fail-closed")
+    """包装 verify_ip.load_asn_table，附带审计信息。返回 (table_set, info)。"""
+    table = _load_table()
+    info = {"count": len(table), "source": "merged-upstream",
+            "sha": hashlib.sha256(
+                "\n".join(sorted(table, key=int)).encode()).hexdigest()[:12],
+            "at": now_s}
+    return table, info
 
-
-def get_asn(ip):
-    """返回 (asn_int_or_None, transport_ok)。transport 失败抛 TransportError；
-    成功返回但 ASN 为空 -> (None, True)（数据缺失，走 unknown 结论）。"""
-    # 主源 ipquery.io
-    try:
-        d = json.loads(fetch(IPQUERY.format(ip=ip)))
-        isp = d.get("isp") or {}
-        n = norm_asn(isp.get("asn"))
-        return (int(n) if n else None), True, d
-    except HTTPError as e:
-        if e.code == 429:
-            raise TransportError(f"ipquery 429")
-        # 非 429 的 HTTP 错误也算传输失败，试备用
-    except Exception:
-        pass
-    # 备用 ipwho.is
-    try:
-        d = json.loads(fetch(IPWHOIS.format(ip=ip)))
-        conn = d.get("connection") or {}
-        n = norm_asn(conn.get("asn"))
-        return (int(n) if n else None), True, d
-    except Exception as e:
-        raise TransportError(f"双源 ASN 查询失败: {e}")
-
-
-class TransportError(Exception):
-    pass
-
-
-def get_hostname(ip):
-    """PTR 反查；失败 -> 备用 ipinfo.io；都失败 -> None（本层弃权，非传输失败）。"""
-    def _ptr():
-        try:
-            return socket.gethostbyaddr(ip)[0]
-        except Exception:
-            return None
-    try:
-        with ThreadPoolExecutor(max_workers=1) as ex:
-            h = ex.submit(_ptr).result(timeout=PTR_TIMEOUT)
-        if h:
-            return h
-    except FuturesTimeout:
-        pass
-    except Exception:
-        pass
-    try:
-        d = json.loads(fetch(IPINFO.format(ip=ip), timeout=10))
-        h = (d.get("hostname") or "").strip()
-        return h or None
-    except Exception:
-        return None
-
-
-def hostname_signal(ptr):
-    """返回 'residential' / 'datacenter' / None（弃权）。住宅词优先级最高。"""
-    if not ptr:
-        return None, None
-    low = ptr.lower()
-    for w in RESIDENTIAL_WORDS:
-        if w in low:
-            return "residential", w
-    m = DATACENTER_RE.search(low)
-    if m:
-        return "datacenter", m.group(0)
-    return None, None
-
-
-def classify(ip, asn, asn_in_list, ptr):
-    """返回 (net, reason_dict)。不抛错（调用方保证输入有效）。"""
-    sig, matched = hostname_signal(ptr)
-    reason = {
-        "asn": {"asn": asn, "in_hosting_list": bool(asn_in_list), "at": now_s},
-        "hostname": {"ptr": ptr, "signal": sig, "matched": matched, "at": now_s},
-    }
-    if asn_in_list or sig == "datacenter":
-        return "datacenter", reason
-    if asn is not None and not asn_in_list and sig == "residential":
-        return "residential", reason
-    # unknown 子原因（供 breakdown）
-    if asn is None:
-        sub = "asn-missing"
-    elif ptr is None:
-        sub = "no-ptr"
-    elif sig is None and not asn_in_list:
-        sub = "single-signal" if sig == "residential" or True else "no-signal"
-        # 更精确：住宅词未命中且 ASN 未命中 -> 信息不足
-        sub = "insufficient"
-    else:
-        sub = "insufficient"
-    reason["unknown_sub"] = sub
-    return "unknown", reason
 
 
 def load_overrides():
@@ -231,18 +63,32 @@ def load_overrides():
 
 
 def override_for(ip, overrides):
+    """人工名单最高优先级。allow 必须有合法 expires（缺失/naive/非法 -> 无效+告警，不静默忽略）；
+    deny 的 expires 可选。返回 (net, reason) 或 None。"""
     o = overrides.get(ip)
-    if not o:
+    if not o or not isinstance(o, dict):
         return None
-    exp = o.get("expires")
-    if exp:
-        try:
-            if datetime.fromisoformat(exp) < now:
-                return None
-        except Exception:
-            return None
+    if ip.startswith("_"):
+        return None
     net = o.get("net")
     if net not in ("residential", "datacenter"):
+        return None
+    exp = o.get("expires")
+    dt = None
+    if exp:
+        try:
+            dt = datetime.fromisoformat(exp)
+            if dt.tzinfo is None:
+                raise ValueError("naive datetime（需带时区）")
+        except Exception as e:
+            alert(f"overrides {ip}: expires 非法（{e}），该条目已忽略")
+            return None
+        if dt < now:
+            return None  # 已过期
+        if (dt - now) <= timedelta(days=7):
+            alert(f"overrides {ip}: 将在 7 天内过期")
+    elif net == "residential":
+        alert(f"overrides {ip}: allow 缺少 expires，已忽略（allow 必须有过期时间）")
         return None
     return net, {"override": {"by": o.get("by"), "why": o.get("why"),
                              "at": o.get("at"), "expires": exp}}
@@ -358,7 +204,7 @@ def main():
         sys.exit(2)
     print(f"  候选 {len(ips)} IP")
 
-    # 4. 逐 IP 判定
+    # 4. 逐 IP 判定（verify_ip.classify_ip 为唯一判定入口）
     new_entries, frozen, failed_ips = {}, 0, []
     for ip in ips:
         old_e = old_entries.get(ip)
@@ -366,42 +212,32 @@ def main():
         ov = override_for(ip, overrides)
         if ov:
             net_ov, reason_ov = ov
-            new_entries[ip] = {"net": net_ov, "reason": reason_ov, "checked_at": now_s,
-                               "verdict_at": now_s,
+            new_entries[ip] = {"net": net_ov, "raw_net": net_ov, "reason": reason_ov,
+                               "checked_at": now_s, "verdict_at": now_s,
                                "streak": {"net": net_ov, "count": 99, "first_at": now_s}}
             continue
-        # L1 ASN（传输失败 -> 保留上一轮，冻结）
         try:
-            asn, _, raw = get_asn(ip)
-        except TransportError as e:
-            failed_ips.append(ip)
-            if old_e and old_e.get("net"):
-                new_entries[ip] = dict(old_e, frozen=True)
-                frozen += 1
-            continue
+            r = classify_ip(ip, asn_table)
         except Exception as e:
+            # classify_ip 内部已处理传输失败；此处为兜底
             failed_ips.append(ip)
             if old_e and old_e.get("net"):
                 new_entries[ip] = dict(old_e, frozen=True)
                 frozen += 1
             continue
-        # L2 hostname（失败=弃权）
-        ptr = get_hostname(ip)
-        asn_in_list = str(asn) in asn_table if asn is not None else False
-        new_net, reason = classify(ip, asn, asn_in_list, ptr)
+        # 传输失败 -> 保留上一轮，冻结（不下新结论）
+        if (r.get("reason") or {}).get("unknown_sub") == "transport-failed":
+            failed_ips.append(ip)
+            if old_e and old_e.get("net"):
+                new_entries[ip] = dict(old_e, frozen=True)
+                frozen += 1
+            continue
+        new_net, reason = r["net"], r["reason"]
         net, verdict_at, streak, how = apply_debounce(old_e, new_net, reason)
-        e = {"net": net, "reason": reason, "checked_at": now_s,
-             "verdict_at": verdict_at, "streak": streak, "how": how,
-             "cc": None, "asn": asn, "isp": None}
-        # 尽量保留 ipquery 的附加字段
-        try:
-            isp_d = (raw.get("isp") or {})
-            loc_d = (raw.get("location") or {})
-            e["cc"] = (loc_d.get("country_code") or "").upper() or None
-            e["isp"] = isp_d.get("isp") or isp_d.get("org") or None
-        except Exception:
-            pass
-        new_entries[ip] = e
+        new_entries[ip] = {"net": net, "raw_net": new_net, "reason": reason,
+                           "checked_at": now_s, "verdict_at": verdict_at,
+                           "streak": streak, "how": how,
+                           "cc": r.get("cc"), "asn": r.get("asn"), "isp": r.get("isp")}
         time.sleep(REQ_DELAY)
 
     # 5. 冻结超限（7 天 wall-clock 自 verdict_at）-> unknown + 升级告警
@@ -417,7 +253,9 @@ def main():
                 e["frozen"] = False
                 alert(f"{ip} 冻结超 {FREEZE_CAP_DAYS} 天，转 unknown（升级告警）")
 
-    # 6. 保留旧条目中不在本轮列表但仍有效的（verdict 90 天内），其余修剪
+    # 6. 保留旧条目中不在本轮列表但仍有效的（verdict 90 天内），其余修剪。
+    #    P1-2：保留条目同样执行 7 天冻结上限检查（冻结超限 -> unknown + 告警）。
+    pruned = 0
     for ip, e in old_entries.items():
         if ip in new_entries or not isinstance(e, dict) or not e.get("net"):
             continue
@@ -425,8 +263,19 @@ def main():
             va = datetime.fromisoformat(e.get("verdict_at", e.get("checked_at", now_s)))
         except Exception:
             continue
-        if (now - va) <= timedelta(days=VERDICT_TTL_DAYS):
+        age_days = (now - va).days
+        if age_days <= VERDICT_TTL_DAYS:
+            if age_days > FREEZE_CAP_DAYS and e.get("net") != "unknown":
+                e = dict(e)
+                e["net"] = "unknown"
+                e["reason"] = {"stale": True, "frozen_days": age_days,
+                               "note": "step6 freeze cap"}
+                alert(f"{ip} step6 冻结超 {FREEZE_CAP_DAYS} 天，转 unknown")
             new_entries[ip] = e
+        else:
+            pruned += 1
+    if pruned:
+        print(f"  修剪过期条目 {pruned} 条（verdict 超 90 天）")
 
     # 7. 统计 + 突变检测
     counts = {"residential": 0, "datacenter": 0, "unknown": 0}
@@ -444,7 +293,8 @@ def main():
     if pr > 0 and abs(cr - pr) / pr >= 0.5:
         alert(f"residential 数量突变 {pr} -> {cr}（±50%），检查表/源是否异常")
     if pr == 0 and cr > 0:
-        pass
+        # P2-6：空表 fail-open 导致的突增场景，必须告警（原先 pass 是缺口）
+        alert(f"residential 从 0 突增到 {cr}：检查是否空表 fail-open 或源异常")
     # residential 连续 3 天为 0 告警
     zsince = ((old.get("meta") or {}).get("zero_residential_since")
               if isinstance(old, dict) else None)
@@ -464,10 +314,19 @@ def main():
     if failed_ips and not new_entries:
         alert("整批传输失败（双源全挂），本轮未下新结论")
 
+    # P2-2：本地回退连续计数（3 次升级告警）
+    prev_fb = ((old.get("meta") or {}).get("local_fallback_streak", 0)
+               if isinstance(old, dict) else 0)
+    fb_streak = prev_fb + 1 if table_info["source"] == "local-fallback" else 0
+    if fb_streak >= 3:
+        alert(f"ASN 表连续回退本地 {fb_streak} 次，升级告警：检查上游表")
+
     meta = {"generated_at": now_s, "asn_table": table_info,
+            "local_fallback_streak": fb_streak,
             "last_success": now_s if new_entries else (old.get("meta") or {}).get("last_success"),
             "verdict_counts": counts, "unknown_breakdown": unknown_sub,
-            "frozen_count": frozen, "failed_ips": failed_ips[:20],
+            "frozen_count": frozen, "frozen_ratio": round(frozen / max(len(ips), 1), 3),
+            "failed_ips": failed_ips[:20],
             "zero_residential_since": zsince}
     out = {"meta": meta,
            "entries": {ip: new_entries[ip] for ip in sorted(new_entries)}}
@@ -482,11 +341,14 @@ def main():
         print(f"  !! {len(ALERTS)} 条告警（见上）")
     print(f"已写入 {OUT}")
 
-    # 双样本自检（验收门）
+    # 双样本自检（验收门）：比对防抖前 raw_net（P1-1：首轮 residential 走 promote-wait，
+    # 直接比对 net 会在首轮误报；验收的是分类本身，不是防抖）
     for sip, expect in (("219.100.37.239", "datacenter"), ("36.13.8.195", "residential")):
-        got = (new_entries.get(sip) or {}).get("net")
+        e_s = new_entries.get(sip) or {}
+        got = e_s.get("raw_net", e_s.get("net"))
         flag = "OK " if got == expect else "FAIL"
-        print(f"  自检 {flag} {sip}: 期望 {expect}，实际 {got}")
+        extra = "" if got == expect else f"（how={e_s.get('how')}）"
+        print(f"  自检 {flag} {sip}: 期望 {expect}，实际 {got}{extra}")
 
 
 if __name__ == "__main__":
