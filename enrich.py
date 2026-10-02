@@ -23,6 +23,8 @@ from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeou
 from verify_ip import classify_ip, load_asn_table as _load_table, norm_asn
 
 VPNGATE_API = "https://www.vpngate.net/api/iphone/"
+OUT = "ip-quality.json"
+OVERRIDES = "overrides.json"
 
 now = datetime.now(timezone.utc)
 now_s = now.isoformat(timespec="seconds")
@@ -46,7 +48,8 @@ def fetch(url, timeout=TIMEOUT):
 def load_asn_table():
     """包装 verify_ip.load_asn_table，附带审计信息。返回 (table_set, info)。"""
     table = _load_table()
-    info = {"count": len(table), "source": "merged-upstream",
+    src = getattr(_load_table, "last_source", "unknown")
+    info = {"count": len(table), "merged": len(table), "source": src,
             "sha": hashlib.sha256(
                 "\n".join(sorted(table, key=int)).encode()).hexdigest()[:12],
             "at": now_s}
