@@ -1,5 +1,5 @@
 /**
- * gate-sub v4.4 — VPN Gate SSTP 动态订阅生成器（加固版）
+ * gate-sub v4.5 — VPN Gate SSTP 动态订阅生成器（加固版）
  * ============================================================================
  * v4.2 相对 v4.1 的修复（ChatGPT 发散评审）：
  * 1. 降级不再毒化健康缓存：健康 key 只写健康构建；降级构建走独立 degraded key
@@ -284,6 +284,7 @@ const CC_ZH = { JP: '日本', KR: '韩国', US: '美国', GB: '英国', DE: '德
 // Cache API 缓存 1 小时。key=IP，value={dc,vpn,proxy,tor,risk,cc,asn,isp,updated}。
 // 拉取失败回退空映射（无标签、不编造），不影响主流程。
 const QUALITY_TTL_S = 3600;
+const QUALITY_FETCH_TIMEOUT_MS = 3000;  // 前台路径单独短超时：源站慢则降级，不拖 /sub
 async function getQualityMap(cache, qualityUrl) {
   if (!qualityUrl) return {};
   const key = new Request(`quality-map:${VERSION}:${qualityUrl}`, { method: 'GET' });
@@ -294,7 +295,7 @@ async function getQualityMap(cache, qualityUrl) {
     }
   } catch (_) {}
   try {
-    const r = await fetchWithTimeout(qualityUrl, FETCH_TIMEOUT_MS,
+    const r = await fetchWithTimeout(qualityUrl, QUALITY_FETCH_TIMEOUT_MS,
       { headers: { 'User-Agent': 'Mozilla/5.0 (gate-sub)' } });
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const j = await r.json();
