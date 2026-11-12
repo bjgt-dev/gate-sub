@@ -1,23 +1,23 @@
 {
  "meta": {
-  "generated_at": "2026-11-11T14:29:38+00:00",
+  "generated_at": "2026-11-12T00:41:58+00:00",
   "asn_table": {
    "count": 2592,
    "merged": 2592,
    "source": "local-fallback",
    "sha": "29cb1c3225d1",
-   "at": "2026-11-11T14:29:38+00:00"
+   "at": "2026-11-12T00:41:58+00:00"
   },
-  "local_fallback_streak": 115,
-  "last_success": "2026-11-11T14:29:38+00:00",
+  "local_fallback_streak": 116,
+  "last_success": "2026-11-12T00:41:58+00:00",
   "verdict_counts": {
-   "residential": 60,
-   "datacenter": 209,
-   "unknown": 4553
+   "residential": 58,
+   "datacenter": 207,
+   "unknown": 4585
   },
   "unknown_breakdown": {
-   "insufficient": 2528,
-   "no-ptr": 1995,
+   "no-ptr": 2003,
+   "insufficient": 2552,
    "mobile": 18,
    "academic": 12
   },
@@ -266,24 +266,24 @@
     "asn": {
      "asn": 3786,
      "in_hosting_list": false,
-     "at": "2026-10-21T04:47:03+00:00"
+     "at": "2026-11-12T00:44:05+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-10-21T04:47:03+00:00"
+     "at": "2026-11-12T00:44:05+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-10-21T04:44:51+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-21T04:44:51+00:00",
    "streak": {
     "net": "unknown",
-    "count": 1,
-    "first_at": "2026-10-21T04:44:51+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "first",
+   "how": "steady",
    "cc": "KR",
    "asn": 3786,
    "isp": "LG DACOM Corporation"
@@ -4200,23 +4200,23 @@
     "asn": {
      "asn": 2516,
      "in_hosting_list": false,
-     "at": "2026-11-11T06:18:50+00:00"
+     "at": "2026-11-12T00:44:13+00:00"
     },
     "hostname": {
      "ptr": "KD106168186232.ppp-bb.dion.ne.jp",
      "signal": "residential",
      "matched": "ppp",
-     "at": "2026-11-11T06:18:50+00:00"
+     "at": "2026-11-12T00:44:13+00:00"
     }
    },
-   "checked_at": "2026-11-11T06:16:36+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-11T06:16:36+00:00",
    "streak": {
     "net": "residential",
     "count": 99,
-    "first_at": "2026-11-11T06:16:36+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "promote-ok",
+   "how": "steady",
    "cc": "JP",
    "asn": 2516,
    "isp": "KDDI CORPORATION"
@@ -5299,6 +5299,28 @@
    "asn": 5432,
    "isp": "Proximus NV"
   },
+  "109.165.63.8": {
+   "net": "datacenter",
+   "raw_net": "datacenter",
+   "reason": {
+    "asn": {
+     "asn": 12389,
+     "in_hosting_list": true,
+     "at": "2026-11-12T00:44:23+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "datacenter",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "RU",
+   "asn": 12389,
+   "isp": "PJSC Rostelecom"
+  },
   "109.169.141.209": {
    "net": "unknown",
    "raw_net": "datacenter",
@@ -5440,14 +5462,12 @@
    "isp": "JSC \"ER-Telecom Holding\""
   },
   "109.195.223.67": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 56377,
-     "in_hosting_list": true,
-     "at": "2026-11-03T23:24:49+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -5501,6 +5521,28 @@
    "asn": 50427,
    "isp": "Orion Telecom LLC"
   },
+  "109.235.25.103": {
+   "net": "datacenter",
+   "raw_net": "datacenter",
+   "reason": {
+    "asn": {
+     "asn": 43761,
+     "in_hosting_list": true,
+     "at": "2026-11-12T00:43:09+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "datacenter",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "RU",
+   "asn": 43761,
+   "isp": "SvyazService Ltd"
+  },
   "109.248.151.118": {
    "net": "datacenter",
    "raw_net": "datacenter",
@@ -5508,17 +5550,17 @@
     "asn": {
      "asn": 52048,
      "in_hosting_list": true,
-     "at": "2026-11-08T22:05:21+00:00"
+     "at": "2026-11-12T00:44:18+00:00"
     }
    },
-   "checked_at": "2026-11-08T22:03:26+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-08T22:03:26+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 1,
-    "first_at": "2026-11-08T22:03:26+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "first",
+   "how": "steady",
    "cc": "NL",
    "asn": 52048,
    "isp": "SIA RixHost"
@@ -6126,6 +6168,35 @@
    "cc": "JP",
    "asn": 9605,
    "isp": "MAPS"
+  },
+  "110.163.140.56": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 9605,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:42:55+00:00"
+    },
+    "hostname": {
+     "ptr": "mo110-163-140-56.fix.mopera.net",
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:42:55+00:00"
+    },
+    "unknown_sub": "insufficient"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "JP",
+   "asn": 9605,
+   "isp": "NTT DOCOMO, INC."
   },
   "110.163.147.209": {
    "net": "unknown",
@@ -9683,24 +9754,24 @@
     "asn": {
      "asn": 4766,
      "in_hosting_list": false,
-     "at": "2026-10-29T05:48:19+00:00"
+     "at": "2026-11-12T00:42:47+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-10-29T05:48:19+00:00"
+     "at": "2026-11-12T00:42:47+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-10-29T05:46:50+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-29T05:46:50+00:00",
    "streak": {
     "net": "unknown",
-    "count": 1,
-    "first_at": "2026-10-29T05:46:50+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "first",
+   "how": "steady",
    "cc": "KR",
    "asn": 4766,
    "isp": "Korea Telecom"
@@ -10623,6 +10694,34 @@
    "cc": "KR",
    "asn": 9845,
    "isp": "LG HelloVision Corp."
+  },
+  "113.145.220.179": {
+   "net": "unknown",
+   "raw_net": "residential",
+   "reason": {
+    "asn": {
+     "asn": 2516,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:14+00:00"
+    },
+    "hostname": {
+     "ptr": "KD113145220179.ppp-oct.au-hikari.ne.jp",
+     "signal": "residential",
+     "matched": "ppp",
+     "at": "2026-11-12T00:43:14+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "residential",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "promote-wait",
+   "cc": "JP",
+   "asn": 2516,
+   "isp": "KDDI CORPORATION"
   },
   "113.145.230.120": {
    "net": "unknown",
@@ -13517,22 +13616,22 @@
     "asn": {
      "asn": 2519,
      "in_hosting_list": false,
-     "at": "2026-11-11T14:30:02+00:00"
+     "at": "2026-11-12T00:42:34+00:00"
     },
     "hostname": {
      "ptr": "115-179-206-241.east.xps.vectant.ne.jp",
      "signal": null,
      "matched": null,
-     "at": "2026-11-11T14:30:02+00:00"
+     "at": "2026-11-12T00:42:34+00:00"
     },
     "unknown_sub": "insufficient"
    },
-   "checked_at": "2026-11-11T14:29:38+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-02T07:26:21+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-11-11T14:29:38+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -15546,22 +15645,22 @@
     "asn": {
      "asn": 2527,
      "in_hosting_list": false,
-     "at": "2026-11-08T06:00:11+00:00"
+     "at": "2026-11-12T00:43:34+00:00"
     },
     "hostname": {
      "ptr": "fp7452ef2b.aicf604.ap.nuro.jp",
      "signal": null,
      "matched": null,
-     "at": "2026-11-08T06:00:11+00:00"
+     "at": "2026-11-12T00:43:34+00:00"
     },
     "unknown_sub": "insufficient"
    },
-   "checked_at": "2026-11-08T05:59:00+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-03T11:38:44+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-11-08T05:59:00+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -19666,22 +19765,22 @@
     "asn": {
      "asn": 4766,
      "in_hosting_list": false,
-     "at": "2026-11-08T13:24:21+00:00"
+     "at": "2026-11-12T00:43:59+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-11-08T13:24:21+00:00"
+     "at": "2026-11-12T00:43:59+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-11-08T13:23:26+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-17T15:33:28+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-11-08T13:23:26+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "KR",
@@ -20424,6 +20523,28 @@
    "asn": 18403,
    "isp": "FPT Telecom Company"
   },
+  "118.68.183.176": {
+   "net": "datacenter",
+   "raw_net": "datacenter",
+   "reason": {
+    "asn": {
+     "asn": 18403,
+     "in_hosting_list": true,
+     "at": "2026-11-12T00:43:33+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "datacenter",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "VN",
+   "asn": 18403,
+   "isp": "FPT Telecom Company"
+  },
   "118.68.186.7": {
    "net": "unknown",
    "raw_net": "datacenter",
@@ -20607,14 +20728,12 @@
    "isp": "FPT Telecom Company"
   },
   "118.70.180.136": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 18403,
-     "in_hosting_list": true,
-     "at": "2026-11-03T23:24:01+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -21443,6 +21562,35 @@
     "net": "unknown",
     "count": 1,
     "first_at": "2026-10-28T05:40:39+00:00"
+   },
+   "how": "first",
+   "cc": "JP",
+   "asn": 9824,
+   "isp": "JCOM Co., Ltd."
+  },
+  "119.171.255.242": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 9824,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:27+00:00"
+    },
+    "hostname": {
+     "ptr": "119-171-255-242.rev.home.ne.jp",
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:44:27+00:00"
+    },
+    "unknown_sub": "insufficient"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "first",
    "cc": "JP",
@@ -23886,20 +24034,12 @@
    "isp": "OKAYAMA NETWORK INC."
   },
   "119.47.48.187": {
-   "net": "residential",
+   "net": "unknown",
    "raw_net": "residential",
    "reason": {
-    "asn": {
-     "asn": 7679,
-     "in_hosting_list": false,
-     "at": "2026-11-09T22:21:28+00:00"
-    },
-    "hostname": {
-     "ptr": "119-47-48-187.ppp.bbiq.jp",
-     "signal": "residential",
-     "matched": "ppp",
-     "at": "2026-11-09T22:21:28+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-09T22:20:18+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -27304,22 +27444,22 @@
     "asn": {
      "asn": 4766,
      "in_hosting_list": false,
-     "at": "2026-11-03T00:57:45+00:00"
+     "at": "2026-11-12T00:42:36+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-11-03T00:57:45+00:00"
+     "at": "2026-11-12T00:42:36+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-11-03T00:57:13+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-18T11:02:59+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-11-03T00:57:13+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "KR",
@@ -28766,6 +28906,35 @@
    "asn": 4766,
    "isp": "Korea Telecom"
   },
+  "121.155.228.25": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4766,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:31+00:00"
+    },
+    "hostname": {
+     "ptr": null,
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:43:31+00:00"
+    },
+    "unknown_sub": "no-ptr"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "KR",
+   "asn": 4766,
+   "isp": "Korea Telecom"
+  },
   "121.155.230.179": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -28789,6 +28958,35 @@
     "net": "unknown",
     "count": 1,
     "first_at": "2026-10-07T05:58:01+00:00"
+   },
+   "how": "first",
+   "cc": "KR",
+   "asn": 4766,
+   "isp": "Korea Telecom"
+  },
+  "121.155.52.129": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4766,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:01+00:00"
+    },
+    "hostname": {
+     "ptr": null,
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:44:01+00:00"
+    },
+    "unknown_sub": "no-ptr"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "first",
    "cc": "KR",
@@ -29368,6 +29566,35 @@
     "net": "unknown",
     "count": 1,
     "first_at": "2026-10-15T21:22:03+00:00"
+   },
+   "how": "first",
+   "cc": "KR",
+   "asn": 4766,
+   "isp": "Korea Telecom"
+  },
+  "121.163.89.62": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4766,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:03+00:00"
+    },
+    "hostname": {
+     "ptr": null,
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:44:03+00:00"
+    },
+    "unknown_sub": "no-ptr"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "first",
    "cc": "KR",
@@ -35621,24 +35848,24 @@
     "asn": {
      "asn": 2527,
      "in_hosting_list": false,
-     "at": "2026-11-05T19:57:19+00:00"
+     "at": "2026-11-12T00:43:36+00:00"
     },
     "hostname": {
      "ptr": "fp7cdb96ce.knge320.ap.nuro.jp",
      "signal": null,
      "matched": null,
-     "at": "2026-11-05T19:57:19+00:00"
+     "at": "2026-11-12T00:43:36+00:00"
     },
     "unknown_sub": "insufficient"
    },
-   "checked_at": "2026-11-05T19:55:57+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-05T19:55:57+00:00",
    "streak": {
     "net": "unknown",
-    "count": 1,
-    "first_at": "2026-11-05T19:55:57+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "first",
+   "how": "steady",
    "cc": "JP",
    "asn": 2527,
    "isp": "Sony Network Communications Inc."
@@ -38947,6 +39174,35 @@
    "asn": 17858,
    "isp": "LG POWERCOMM"
   },
+  "125.189.240.235": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 17858,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:24+00:00"
+    },
+    "hostname": {
+     "ptr": null,
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:43:24+00:00"
+    },
+    "unknown_sub": "no-ptr"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "KR",
+   "asn": 17858,
+   "isp": "LG POWERCOMM"
+  },
   "125.190.212.76": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -40435,6 +40691,34 @@
    "asn": 17676,
    "isp": "SoftBank Corp."
   },
+  "126.117.118.58": {
+   "net": "unknown",
+   "raw_net": "residential",
+   "reason": {
+    "asn": {
+     "asn": 17676,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:20+00:00"
+    },
+    "hostname": {
+     "ptr": "softbank126117118058.bbtec.net",
+     "signal": "residential",
+     "matched": "bb",
+     "at": "2026-11-12T00:44:20+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "residential",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "promote-wait",
+   "cc": "JP",
+   "asn": 17676,
+   "isp": "SoftBank Corp."
+  },
   "126.117.124.161": {
    "net": "unknown",
    "raw_net": "residential",
@@ -40548,20 +40832,12 @@
    "isp": "SoftBank Corp."
   },
   "126.12.172.212": {
-   "net": "residential",
+   "net": "unknown",
    "raw_net": "residential",
    "reason": {
-    "asn": {
-     "asn": 17676,
-     "in_hosting_list": false,
-     "at": "2026-11-03T23:23:19+00:00"
-    },
-    "hostname": {
-     "ptr": "softbank126012172212.bbtec.net",
-     "signal": "residential",
-     "matched": "bb",
-     "at": "2026-11-03T23:23:19+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -41433,21 +41709,21 @@
     "asn": {
      "asn": 17676,
      "in_hosting_list": false,
-     "at": "2026-10-24T15:56:46+00:00"
+     "at": "2026-11-12T00:43:12+00:00"
     },
     "hostname": {
      "ptr": "softbank126163128063.bbtec.net",
      "signal": "residential",
      "matched": "bb",
-     "at": "2026-10-24T15:56:46+00:00"
+     "at": "2026-11-12T00:43:12+00:00"
     }
    },
-   "checked_at": "2026-10-24T15:56:19+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-11T05:45:23+00:00",
    "streak": {
     "net": "residential",
     "count": 1,
-    "first_at": "2026-10-24T15:56:19+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "promote-wait",
    "cc": "JP",
@@ -42279,20 +42555,12 @@
    "isp": "SoftBank Corp."
   },
   "126.219.0.177": {
-   "net": "residential",
+   "net": "unknown",
    "raw_net": "residential",
    "reason": {
-    "asn": {
-     "asn": 17676,
-     "in_hosting_list": false,
-     "at": "2026-11-09T22:21:26+00:00"
-    },
-    "hostname": {
-     "ptr": "softbank126219000177.bbtec.net",
-     "signal": "residential",
-     "matched": "bb",
-     "at": "2026-11-09T22:21:26+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-09T22:20:18+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -42406,18 +42674,26 @@
    "net": "unknown",
    "raw_net": "residential",
    "reason": {
-    "stale": true,
-    "frozen_days": 8,
-    "note": "step6 freeze cap"
+    "asn": {
+     "asn": 17676,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:39+00:00"
+    },
+    "hostname": {
+     "ptr": "softbank126224111147.bbtec.net",
+     "signal": "residential",
+     "matched": "bb",
+     "at": "2026-11-12T00:43:39+00:00"
+    }
    },
-   "checked_at": "2026-10-25T20:49:55+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-25T20:49:55+00:00",
    "streak": {
     "net": "residential",
-    "count": 99,
-    "first_at": "2026-10-25T20:49:55+00:00"
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "promote-ok",
+   "how": "promote-wait",
    "cc": "JP",
    "asn": 17676,
    "isp": "SoftBank Corp."
@@ -43630,6 +43906,34 @@
     "net": "residential",
     "count": 1,
     "first_at": "2026-10-29T12:59:07+00:00"
+   },
+   "how": "promote-wait",
+   "cc": "JP",
+   "asn": 17676,
+   "isp": "SoftBank Corp."
+  },
+  "126.40.56.91": {
+   "net": "unknown",
+   "raw_net": "residential",
+   "reason": {
+    "asn": {
+     "asn": 17676,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:11+00:00"
+    },
+    "hostname": {
+     "ptr": "softbank126040056091.bbtec.net",
+     "signal": "residential",
+     "matched": "bb",
+     "at": "2026-11-12T00:43:11+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "residential",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "promote-wait",
    "cc": "JP",
@@ -44953,29 +45257,29 @@
    "isp": "SoftBank Corp."
   },
   "126.77.185.5": {
-   "net": "unknown",
+   "net": "residential",
    "raw_net": "residential",
    "reason": {
     "asn": {
      "asn": 17676,
      "in_hosting_list": false,
-     "at": "2026-11-07T13:00:01+00:00"
+     "at": "2026-11-12T00:43:26+00:00"
     },
     "hostname": {
      "ptr": "softbank126077185005.bbtec.net",
      "signal": "residential",
      "matched": "bb",
-     "at": "2026-11-07T13:00:01+00:00"
+     "at": "2026-11-12T00:43:26+00:00"
     }
    },
-   "checked_at": "2026-11-07T12:58:45+00:00",
-   "verdict_at": "2026-10-10T05:51:44+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
    "streak": {
     "net": "residential",
-    "count": 1,
-    "first_at": "2026-11-07T12:58:45+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "promote-wait",
+   "how": "promote-ok",
    "cc": "JP",
    "asn": 17676,
    "isp": "SoftBank Corp."
@@ -45225,29 +45529,29 @@
    "isp": "SoftBank Corp."
   },
   "126.8.199.141": {
-   "net": "unknown",
+   "net": "residential",
    "raw_net": "residential",
    "reason": {
     "asn": {
      "asn": 17676,
      "in_hosting_list": false,
-     "at": "2026-11-08T22:03:44+00:00"
+     "at": "2026-11-12T00:42:28+00:00"
     },
     "hostname": {
      "ptr": "softbank126008199141.bbtec.net",
      "signal": "residential",
      "matched": "bb",
-     "at": "2026-11-08T22:03:44+00:00"
+     "at": "2026-11-12T00:42:28+00:00"
     }
    },
-   "checked_at": "2026-11-08T22:03:26+00:00",
-   "verdict_at": "2026-10-26T22:39:31+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
    "streak": {
     "net": "residential",
-    "count": 1,
-    "first_at": "2026-11-08T22:03:26+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "promote-wait",
+   "how": "promote-ok",
    "cc": "JP",
    "asn": 17676,
    "isp": "SoftBank Corp."
@@ -49836,22 +50140,22 @@
     "asn": {
      "asn": 4766,
      "in_hosting_list": false,
-     "at": "2026-11-10T07:16:31+00:00"
+     "at": "2026-11-12T00:42:30+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-11-10T07:16:31+00:00"
+     "at": "2026-11-12T00:42:30+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-11-10T07:16:00+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-07T12:58:45+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-11-10T07:16:00+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "KR",
@@ -52621,17 +52925,17 @@
     "asn": {
      "asn": 211619,
      "in_hosting_list": true,
-     "at": "2026-11-11T06:19:02+00:00"
+     "at": "2026-11-12T00:44:24+00:00"
     }
    },
-   "checked_at": "2026-11-11T06:16:36+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-11T06:16:36+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 1,
-    "first_at": "2026-11-11T06:16:36+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "demote-fast",
+   "how": "steady",
    "cc": "HR",
    "asn": 211619,
    "isp": "MAXKO d.o.o."
@@ -54016,6 +54320,35 @@
    "asn": 4713,
    "isp": "NTT DOCOMO BUSINESS,Inc."
   },
+  "153.182.205.26": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4713,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:16+00:00"
+    },
+    "hostname": {
+     "ptr": "p1534026-ipxg05501hiraide.tochigi.ocn.ne.jp",
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:43:16+00:00"
+    },
+    "unknown_sub": "insufficient"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "JP",
+   "asn": 4713,
+   "isp": "NTT DOCOMO BUSINESS,Inc."
+  },
   "153.184.6.64": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -55315,6 +55648,35 @@
     "net": "unknown",
     "count": 1,
     "first_at": "2026-11-11T14:29:38+00:00"
+   },
+   "how": "first",
+   "cc": "JP",
+   "asn": 4713,
+   "isp": "NTT DOCOMO BUSINESS,Inc."
+  },
+  "153.232.7.127": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4713,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:17+00:00"
+    },
+    "hostname": {
+     "ptr": "127.7.232.153.ap.dti.ne.jp",
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:44:17+00:00"
+    },
+    "unknown_sub": "insufficient"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "first",
    "cc": "JP",
@@ -58603,29 +58965,29 @@
    "isp": "KDDI CORPORATION"
   },
   "175.129.117.170": {
-   "net": "unknown",
+   "net": "residential",
    "raw_net": "residential",
    "reason": {
     "asn": {
      "asn": 2516,
      "in_hosting_list": false,
-     "at": "2026-11-11T14:30:00+00:00"
+     "at": "2026-11-12T00:42:32+00:00"
     },
     "hostname": {
      "ptr": "KD175129117170.ppp-bb.dion.ne.jp",
      "signal": "residential",
      "matched": "ppp",
-     "at": "2026-11-11T14:30:00+00:00"
+     "at": "2026-11-12T00:42:32+00:00"
     }
    },
-   "checked_at": "2026-11-11T14:29:38+00:00",
-   "verdict_at": "2026-10-24T20:48:03+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
    "streak": {
     "net": "residential",
-    "count": 1,
-    "first_at": "2026-11-11T14:29:38+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "promote-wait",
+   "how": "promote-ok",
    "cc": "JP",
    "asn": 2516,
    "isp": "KDDI CORPORATION"
@@ -59268,22 +59630,22 @@
     "asn": {
      "asn": 4766,
      "in_hosting_list": false,
-     "at": "2026-11-11T14:30:21+00:00"
+     "at": "2026-11-12T00:43:01+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-11-11T14:30:21+00:00"
+     "at": "2026-11-12T00:43:01+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-11-11T14:29:38+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-10T12:30:40+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-11-11T14:29:38+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "KR",
@@ -60601,22 +60963,22 @@
     "asn": {
      "asn": 4766,
      "in_hosting_list": false,
-     "at": "2026-10-31T05:41:00+00:00"
+     "at": "2026-11-12T00:43:27+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-10-31T05:41:00+00:00"
+     "at": "2026-11-12T00:43:27+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-10-31T05:38:55+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-19T22:20:46+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-10-31T05:38:55+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "KR",
@@ -67163,6 +67525,34 @@
    "asn": 17858,
    "isp": "LG POWERCOMM"
   },
+  "182.235.231.66": {
+   "net": "unknown",
+   "raw_net": "residential",
+   "reason": {
+    "asn": {
+     "asn": 9416,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:42+00:00"
+    },
+    "hostname": {
+     "ptr": "host-66.231-235-182.cable.static.kbtelecom.net",
+     "signal": "residential",
+     "matched": "cable",
+     "at": "2026-11-12T00:43:42+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "residential",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "promote-wait",
+   "cc": "TW",
+   "asn": 9416,
+   "isp": "KBT Co., LTD"
+  },
   "182.237.232.193": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -69778,6 +70168,35 @@
    "asn": 28343,
    "isp": "UNIFIQUE TELECOMUNICACOES S/A"
   },
+  "186.55.97.239": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 6057,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:10+00:00"
+    },
+    "hostname": {
+     "ptr": "r186-55-97-239.dialup.adsl.anteldata.net.uy",
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:44:10+00:00"
+    },
+    "unknown_sub": "insufficient"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "UY",
+   "asn": 6057,
+   "isp": "Administracion Nacional de Telecomunicaciones"
+  },
   "186.61.133.70": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -71062,6 +71481,35 @@
    "asn": 12389,
    "isp": "Rostelecom networks"
   },
+  "202.137.33.185": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 9351,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:15+00:00"
+    },
+    "hostname": {
+     "ptr": "host-202-137-33-185.ztv.ne.jp",
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:44:15+00:00"
+    },
+    "unknown_sub": "insufficient"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "JP",
+   "asn": 9351,
+   "isp": "ZTV CO.,LTD"
+  },
   "202.137.56.227": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -71988,20 +72436,12 @@
    "isp": "Globe Telecoms"
   },
   "203.179.200.136": {
-   "net": "residential",
+   "net": "unknown",
    "raw_net": "residential",
    "reason": {
-    "asn": {
-     "asn": 7679,
-     "in_hosting_list": false,
-     "at": "2026-11-03T23:23:54+00:00"
-    },
-    "hostname": {
-     "ptr": "203-179-200-136.ppp.bbiq.jp",
-     "signal": "residential",
-     "matched": "ppp",
-     "at": "2026-11-03T23:23:54+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -80812,15 +81252,15 @@
     "asn": {
      "asn": 9009,
      "in_hosting_list": true,
-     "at": "2026-11-11T14:30:04+00:00"
+     "at": "2026-11-12T00:42:44+00:00"
     }
    },
-   "checked_at": "2026-11-11T14:29:38+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-04T06:19:34+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-11T14:29:38+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -80983,20 +81423,12 @@
    "isp": "SoftBank Corp."
   },
   "218.112.71.240": {
-   "net": "residential",
+   "net": "unknown",
    "raw_net": "residential",
    "reason": {
-    "asn": {
-     "asn": 17676,
-     "in_hosting_list": false,
-     "at": "2026-11-10T19:44:09+00:00"
-    },
-    "hostname": {
-     "ptr": "softbank218112071240.bbtec.net",
-     "signal": "residential",
-     "matched": "bb",
-     "at": "2026-11-10T19:44:09+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-10T19:42:33+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -81098,18 +81530,26 @@
    "net": "unknown",
    "raw_net": "residential",
    "reason": {
-    "stale": true,
-    "frozen_days": 8,
-    "note": "step6 freeze cap"
+    "asn": {
+     "asn": 17676,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:37+00:00"
+    },
+    "hostname": {
+     "ptr": "softbank218115040234.bbtec.net",
+     "signal": "residential",
+     "matched": "bb",
+     "at": "2026-11-12T00:43:37+00:00"
+    }
    },
-   "checked_at": "2026-10-23T04:47:52+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-23T04:47:52+00:00",
    "streak": {
     "net": "residential",
-    "count": 99,
-    "first_at": "2026-10-23T04:47:52+00:00"
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "promote-ok",
+   "how": "promote-wait",
    "cc": "JP",
    "asn": 17676,
    "isp": "SoftBank Corp."
@@ -83963,23 +84403,23 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-06T19:23:59+00:00"
+     "at": "2026-11-12T00:42:23+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-07-07.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-06T19:23:59+00:00"
+     "at": "2026-11-12T00:42:23+00:00"
     }
    },
-   "checked_at": "2026-11-06T19:23:22+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 1,
-    "first_at": "2026-11-06T19:23:22+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "demote-fast",
+   "how": "steady",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
@@ -84149,20 +84589,12 @@
    "isp": "SoftEther Telecommunication Research Institute, LLC"
   },
   "219.100.37.110": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 36599,
-     "in_hosting_list": false,
-     "at": "2026-11-08T22:03:52+00:00"
-    },
-    "hostname": {
-     "ptr": "public-vpn-07-14.vpngate.v4.open.ad.jp",
-     "signal": "datacenter",
-     "matched": "vpngate",
-     "at": "2026-11-08T22:03:52+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-08T22:03:26+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -84591,21 +85023,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-10T07:16:15+00:00"
+     "at": "2026-11-12T00:42:06+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-08-14.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-10T07:16:15+00:00"
+     "at": "2026-11-12T00:42:06+00:00"
     }
    },
-   "checked_at": "2026-11-10T07:16:00+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-10T07:16:00+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -84751,23 +85183,23 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-06T19:23:58+00:00"
+     "at": "2026-11-12T00:42:22+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-01-16.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-06T19:23:58+00:00"
+     "at": "2026-11-12T00:42:22+00:00"
     }
    },
-   "checked_at": "2026-11-06T19:23:22+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 1,
-    "first_at": "2026-11-06T19:23:22+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "demote-fast",
+   "how": "steady",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
@@ -84947,21 +85379,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-06T19:23:38+00:00"
+     "at": "2026-11-12T00:42:02+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-11-07.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-06T19:23:38+00:00"
+     "at": "2026-11-12T00:42:02+00:00"
     }
    },
-   "checked_at": "2026-11-06T19:23:22+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-04T19:44:11+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-06T19:23:22+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -84975,21 +85407,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-09T22:20:28+00:00"
+     "at": "2026-11-12T00:42:46+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-11-08.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-09T22:20:28+00:00"
+     "at": "2026-11-12T00:42:46+00:00"
     }
    },
-   "checked_at": "2026-11-09T22:20:18+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-09T22:20:18+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -85169,20 +85601,12 @@
    "isp": "SoftEther Telecommunication Research Institute, LLC"
   },
   "219.100.37.175": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 36599,
-     "in_hosting_list": false,
-     "at": "2026-11-03T23:23:11+00:00"
-    },
-    "hostname": {
-     "ptr": "public-vpn-11-15.vpngate.v4.open.ad.jp",
-     "signal": "datacenter",
-     "matched": "vpngate",
-     "at": "2026-11-03T23:23:11+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -85395,23 +85819,23 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-06T19:23:47+00:00"
+     "at": "2026-11-12T00:42:13+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-12-07.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-06T19:23:47+00:00"
+     "at": "2026-11-12T00:42:13+00:00"
     }
    },
-   "checked_at": "2026-11-06T19:23:22+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 1,
-    "first_at": "2026-11-06T19:23:22+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "demote-fast",
+   "how": "steady",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
@@ -85485,21 +85909,29 @@
    "isp": "SoftEther Telecommunication Research Institute, LLC"
   },
   "219.100.37.187": {
-   "net": "unknown",
+   "net": "datacenter",
    "raw_net": "datacenter",
    "reason": {
-    "stale": true,
-    "frozen_days": 8,
-    "note": "step6 freeze cap"
+    "asn": {
+     "asn": 36599,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:42:09+00:00"
+    },
+    "hostname": {
+     "ptr": "public-vpn-12-11.vpngate.v4.open.ad.jp",
+     "signal": "datacenter",
+     "matched": "vpngate",
+     "at": "2026-11-12T00:42:09+00:00"
+    }
    },
-   "checked_at": "2026-11-07T05:56:44+00:00",
-   "verdict_at": "2026-10-29T12:59:07+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 99,
-    "first_at": "2026-11-07T05:56:44+00:00"
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "steady",
+   "how": "demote-fast",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
@@ -85743,21 +86175,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-10T19:43:10+00:00"
+     "at": "2026-11-12T00:42:58+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-13-05.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-10T19:43:10+00:00"
+     "at": "2026-11-12T00:42:58+00:00"
     }
    },
-   "checked_at": "2026-11-10T19:42:33+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-10T19:42:33+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -85765,21 +86197,29 @@
    "isp": "SoftEther Telecommunication Research Institute, LLC"
   },
   "219.100.37.198": {
-   "net": "unknown",
+   "net": "datacenter",
    "raw_net": "datacenter",
    "reason": {
-    "stale": true,
-    "frozen_days": 8,
-    "note": "step6 freeze cap"
+    "asn": {
+     "asn": 36599,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:42:04+00:00"
+    },
+    "hostname": {
+     "ptr": "public-vpn-13-06.vpngate.v4.open.ad.jp",
+     "signal": "datacenter",
+     "matched": "vpngate",
+     "at": "2026-11-12T00:42:04+00:00"
+    }
    },
-   "checked_at": "2026-11-08T05:59:00+00:00",
-   "verdict_at": "2026-10-31T21:32:19+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 99,
-    "first_at": "2026-11-08T05:59:00+00:00"
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "steady",
+   "how": "demote-fast",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
@@ -85791,23 +86231,23 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-11T06:16:51+00:00"
+     "at": "2026-11-12T00:42:18+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-13-07.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-11T06:16:51+00:00"
+     "at": "2026-11-12T00:42:18+00:00"
     }
    },
-   "checked_at": "2026-11-11T06:16:36+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-11T06:16:36+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 1,
-    "first_at": "2026-11-11T06:16:36+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "demote-fast",
+   "how": "steady",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
@@ -85839,21 +86279,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-11T14:29:54+00:00"
+     "at": "2026-11-12T00:42:16+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-02-04.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-11T14:29:54+00:00"
+     "at": "2026-11-12T00:42:16+00:00"
     }
    },
-   "checked_at": "2026-11-11T14:29:38+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-10T19:42:33+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-11T14:29:38+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -86031,21 +86471,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-11T06:16:46+00:00"
+     "at": "2026-11-12T00:43:00+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-13-15.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-11T06:16:46+00:00"
+     "at": "2026-11-12T00:43:00+00:00"
     }
    },
-   "checked_at": "2026-11-11T06:16:36+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-10T19:42:33+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-11T06:16:36+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -86169,20 +86609,12 @@
    "isp": "SoftEther Telecommunication Research Institute, LLC"
   },
   "219.100.37.212": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 36599,
-     "in_hosting_list": false,
-     "at": "2026-11-06T06:42:37+00:00"
-    },
-    "hostname": {
-     "ptr": "public-vpn-14-04.vpngate.v4.open.ad.jp",
-     "signal": "datacenter",
-     "matched": "vpngate",
-     "at": "2026-11-06T06:42:37+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-06T06:42:14+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -86423,21 +86855,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-08T22:04:04+00:00"
+     "at": "2026-11-12T00:42:08+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-14-13.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-08T22:04:04+00:00"
+     "at": "2026-11-12T00:42:08+00:00"
     }
    },
-   "checked_at": "2026-11-08T22:03:26+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-08T22:03:26+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -86479,21 +86911,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-08T05:59:02+00:00"
+     "at": "2026-11-12T00:42:01+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-14-15.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-08T05:59:02+00:00"
+     "at": "2026-11-12T00:42:01+00:00"
     }
    },
-   "checked_at": "2026-11-08T05:59:00+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-08T05:59:00+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -86659,23 +87091,23 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-07T12:58:56+00:00"
+     "at": "2026-11-12T00:42:11+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-02-11.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-07T12:58:56+00:00"
+     "at": "2026-11-12T00:42:11+00:00"
     }
    },
-   "checked_at": "2026-11-07T12:58:45+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-07T12:58:45+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 1,
-    "first_at": "2026-11-07T12:58:45+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "demote-fast",
+   "how": "steady",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
@@ -86763,23 +87195,23 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-06T19:24:01+00:00"
+     "at": "2026-11-12T00:42:25+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-02-14.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-06T19:24:01+00:00"
+     "at": "2026-11-12T00:42:25+00:00"
     }
    },
-   "checked_at": "2026-11-06T19:23:22+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 1,
-    "first_at": "2026-11-06T19:23:22+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "demote-fast",
+   "how": "steady",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
@@ -86811,42 +87243,34 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-06T19:24:02+00:00"
+     "at": "2026-11-12T00:42:26+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-02-16.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-06T19:24:02+00:00"
+     "at": "2026-11-12T00:42:26+00:00"
     }
    },
-   "checked_at": "2026-11-06T19:23:22+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 1,
-    "first_at": "2026-11-06T19:23:22+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "demote-fast",
+   "how": "steady",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
   },
   "219.100.37.4": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 36599,
-     "in_hosting_list": false,
-     "at": "2026-11-11T14:29:52+00:00"
-    },
-    "hostname": {
-     "ptr": "public-vpn-01-04.vpngate.v4.open.ad.jp",
-     "signal": "datacenter",
-     "matched": "vpngate",
-     "at": "2026-11-11T14:29:52+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-11T14:29:38+00:00",
    "verdict_at": "2026-11-03T14:11:45+00:00",
@@ -87115,21 +87539,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-08T22:03:39+00:00"
+     "at": "2026-11-12T00:42:19+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-04-10.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-08T22:03:39+00:00"
+     "at": "2026-11-12T00:42:19+00:00"
     }
    },
-   "checked_at": "2026-11-08T22:03:26+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-08T22:03:26+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -87431,21 +87855,21 @@
     "asn": {
      "asn": 36599,
      "in_hosting_list": false,
-     "at": "2026-11-10T07:16:11+00:00"
+     "at": "2026-11-12T00:42:21+00:00"
     },
     "hostname": {
      "ptr": "public-vpn-06-04.vpngate.v4.open.ad.jp",
      "signal": "datacenter",
      "matched": "vpngate",
-     "at": "2026-11-10T07:16:11+00:00"
+     "at": "2026-11-12T00:42:21+00:00"
     }
    },
-   "checked_at": "2026-11-10T07:16:00+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-06T19:23:22+00:00",
    "streak": {
     "net": "datacenter",
     "count": 99,
-    "first_at": "2026-11-10T07:16:00+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -87453,21 +87877,29 @@
    "isp": "SoftEther Telecommunication Research Institute, LLC"
   },
   "219.100.37.85": {
-   "net": "unknown",
+   "net": "datacenter",
    "raw_net": "datacenter",
    "reason": {
-    "stale": true,
-    "frozen_days": 8,
-    "note": "step6 freeze cap"
+    "asn": {
+     "asn": 36599,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:42:15+00:00"
+    },
+    "hostname": {
+     "ptr": "public-vpn-06-05.vpngate.v4.open.ad.jp",
+     "signal": "datacenter",
+     "matched": "vpngate",
+     "at": "2026-11-12T00:42:15+00:00"
+    }
    },
-   "checked_at": "2026-11-07T12:58:45+00:00",
-   "verdict_at": "2026-10-31T05:38:55+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
    "streak": {
     "net": "datacenter",
-    "count": 99,
-    "first_at": "2026-11-07T12:58:45+00:00"
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "steady",
+   "how": "demote-fast",
    "cc": "JP",
    "asn": 36599,
    "isp": "SoftEther Telecommunication Research Institute, LLC"
@@ -87677,20 +88109,12 @@
    "isp": "SoftEther Telecommunication Research Institute, LLC"
   },
   "219.100.37.94": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 36599,
-     "in_hosting_list": false,
-     "at": "2026-11-07T21:49:13+00:00"
-    },
-    "hostname": {
-     "ptr": "public-vpn-06-14.vpngate.v4.open.ad.jp",
-     "signal": "datacenter",
-     "matched": "vpngate",
-     "at": "2026-11-07T21:49:13+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-07T21:49:08+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -87809,20 +88233,12 @@
    "isp": "SoftEther Telecommunication Research Institute, LLC"
   },
   "219.100.37.99": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 36599,
-     "in_hosting_list": false,
-     "at": "2026-11-03T23:22:37+00:00"
-    },
-    "hostname": {
-     "ptr": "public-vpn-07-03.vpngate.v4.open.ad.jp",
-     "signal": "datacenter",
-     "matched": "vpngate",
-     "at": "2026-11-03T23:22:37+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -97669,21 +98085,21 @@
     "asn": {
      "asn": 17676,
      "in_hosting_list": false,
-     "at": "2026-11-04T06:19:55+00:00"
+     "at": "2026-11-12T00:42:53+00:00"
     },
     "hostname": {
      "ptr": "softbank221049038126.bbtec.net",
      "signal": "residential",
      "matched": "bb",
-     "at": "2026-11-04T06:19:55+00:00"
+     "at": "2026-11-12T00:42:53+00:00"
     }
    },
-   "checked_at": "2026-11-04T06:19:34+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-11-04T06:19:34+00:00",
    "streak": {
     "net": "residential",
     "count": 1,
-    "first_at": "2026-11-04T06:19:34+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "promote-wait",
    "cc": "JP",
@@ -98369,6 +98785,35 @@
    "asn": 4766,
    "isp": "Korea Telecom"
   },
+  "222.102.78.16": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4766,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:29+00:00"
+    },
+    "hostname": {
+     "ptr": null,
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:43:29+00:00"
+    },
+    "unknown_sub": "no-ptr"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "KR",
+   "asn": 4766,
+   "isp": "Korea Telecom"
+  },
   "222.102.95.219": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -98782,22 +99227,22 @@
     "asn": {
      "asn": 4766,
      "in_hosting_list": false,
-     "at": "2026-10-11T21:59:31+00:00"
+     "at": "2026-11-12T00:42:49+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-10-11T21:59:31+00:00"
+     "at": "2026-11-12T00:42:49+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-10-11T21:57:14+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-03T11:38:44+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-10-11T21:57:14+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "KR",
@@ -99871,6 +100316,35 @@
     "net": "unknown",
     "count": 1,
     "first_at": "2026-10-06T00:02:38+00:00"
+   },
+   "how": "first",
+   "cc": "KR",
+   "asn": 4766,
+   "isp": "Korea Telecom"
+  },
+  "222.120.144.236": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4766,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:07+00:00"
+    },
+    "hostname": {
+     "ptr": null,
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:43:07+00:00"
+    },
+    "unknown_sub": "no-ptr"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "first",
    "cc": "KR",
@@ -102445,27 +102919,27 @@
     "asn": {
      "asn": 38387,
      "in_hosting_list": false,
-     "at": "2026-10-20T11:36:29+00:00"
+     "at": "2026-11-12T00:43:17+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-10-20T11:36:29+00:00"
+     "at": "2026-11-12T00:43:17+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-10-20T11:34:51+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-20T11:34:51+00:00",
    "streak": {
     "net": "unknown",
-    "count": 1,
-    "first_at": "2026-10-20T11:34:51+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "first",
+   "how": "steady",
    "cc": "KR",
    "asn": 38387,
-   "isp": "CMB Sejong Broadcasting Co, .Ltd"
+   "isp": "CMB Sejong Broadcasting Co,.Ltd"
   },
   "27.126.58.170": {
    "net": "unknown",
@@ -105246,14 +105720,12 @@
    "isp": "Novotelecom Ltd"
   },
   "37.194.145.84": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 31200,
-     "in_hosting_list": true,
-     "at": "2026-11-03T23:24:34+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -105350,14 +105822,12 @@
    "isp": "NCNET"
   },
   "37.204.81.139": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 42610,
-     "in_hosting_list": true,
-     "at": "2026-11-03T23:24:27+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -107115,14 +107585,12 @@
    "isp": "FPT Telecom Company"
   },
   "42.118.154.223": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 18403,
-     "in_hosting_list": true,
-     "at": "2026-11-03T23:23:10+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -108360,22 +108828,22 @@
     "asn": {
      "asn": 28716,
      "in_hosting_list": false,
-     "at": "2026-11-07T05:57:41+00:00"
+     "at": "2026-11-12T00:42:51+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-11-07T05:57:41+00:00"
+     "at": "2026-11-12T00:42:51+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-11-07T05:56:44+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-07T23:04:50+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-11-07T05:56:44+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "IT",
@@ -109101,6 +109569,35 @@
    "cc": "US",
    "asn": 5650,
    "isp": "Frontier Communications Corporation"
+  },
+  "47.151.18.4": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 5650,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:06+00:00"
+    },
+    "hostname": {
+     "ptr": "47-151-18-4.fdr01.wmns.ca.ip.frontiernet.net",
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:44:06+00:00"
+    },
+    "unknown_sub": "insufficient"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "US",
+   "asn": 5650,
+   "isp": "Verizon Business"
   },
   "47.153.119.84": {
    "net": "unknown",
@@ -113029,22 +113526,22 @@
     "asn": {
      "asn": 3786,
      "in_hosting_list": false,
-     "at": "2026-11-10T07:18:14+00:00"
+     "at": "2026-11-12T00:43:20+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-11-10T07:18:14+00:00"
+     "at": "2026-11-12T00:43:20+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-11-10T07:16:00+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-02T12:33:24+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-11-10T07:16:00+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "KR",
@@ -114498,6 +114995,35 @@
    "asn": 4713,
    "isp": "NTT DOCOMO BUSINESS,Inc."
   },
+  "58.93.233.224": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4713,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:25+00:00"
+    },
+    "hostname": {
+     "ptr": "i58-93-233-224.s41.a005.ap.plala.or.jp",
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:44:25+00:00"
+    },
+    "unknown_sub": "insufficient"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "JP",
+   "asn": 4713,
+   "isp": "NTT DOCOMO BUSINESS,Inc."
+  },
   "58.95.82.230": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -114610,22 +115136,22 @@
     "asn": {
      "asn": 4766,
      "in_hosting_list": false,
-     "at": "2026-11-08T13:25:06+00:00"
+     "at": "2026-11-12T00:43:57+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-11-08T13:25:06+00:00"
+     "at": "2026-11-12T00:43:57+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-11-08T13:23:26+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-21T04:44:51+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-11-08T13:23:26+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "KR",
@@ -114860,6 +115386,35 @@
     "first_at": "2026-10-30T05:47:02+00:00"
    },
    "how": "steady",
+   "cc": "KR",
+   "asn": 4766,
+   "isp": "Korea Telecom"
+  },
+  "59.12.131.104": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4766,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:42:56+00:00"
+    },
+    "hostname": {
+     "ptr": null,
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:42:56+00:00"
+    },
+    "unknown_sub": "no-ptr"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
    "cc": "KR",
    "asn": 4766,
    "isp": "Korea Telecom"
@@ -119521,29 +120076,29 @@
    "isp": "SoftBank Corp."
   },
   "60.109.167.44": {
-   "net": "unknown",
+   "net": "residential",
    "raw_net": "residential",
    "reason": {
     "asn": {
      "asn": 17676,
      "in_hosting_list": false,
-     "at": "2026-11-09T22:22:09+00:00"
+     "at": "2026-11-12T00:43:22+00:00"
     },
     "hostname": {
      "ptr": "softbank060109167044.bbtec.net",
      "signal": "residential",
      "matched": "bb",
-     "at": "2026-11-09T22:22:09+00:00"
+     "at": "2026-11-12T00:43:22+00:00"
     }
    },
-   "checked_at": "2026-11-09T22:20:18+00:00",
-   "verdict_at": "2026-11-09T22:20:18+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
    "streak": {
     "net": "residential",
-    "count": 1,
-    "first_at": "2026-11-09T22:20:18+00:00"
+    "count": 99,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "promote-wait",
+   "how": "promote-ok",
    "cc": "JP",
    "asn": 17676,
    "isp": "SoftBank Corp."
@@ -120196,18 +120751,26 @@
    "net": "unknown",
    "raw_net": "residential",
    "reason": {
-    "stale": true,
-    "frozen_days": 8,
-    "note": "step6 freeze cap"
+    "asn": {
+     "asn": 17676,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:42:43+00:00"
+    },
+    "hostname": {
+     "ptr": "softbank060126000002.bbtec.net",
+     "signal": "residential",
+     "matched": "bb",
+     "at": "2026-11-12T00:42:43+00:00"
+    }
    },
-   "checked_at": "2026-10-26T04:45:24+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-23T04:47:52+00:00",
    "streak": {
     "net": "residential",
-    "count": 99,
-    "first_at": "2026-10-26T04:45:24+00:00"
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
-   "how": "steady",
+   "how": "promote-wait",
    "cc": "JP",
    "asn": 17676,
    "isp": "SoftBank Corp."
@@ -122747,20 +123310,12 @@
    "isp": "SoftBank Corp."
   },
   "60.86.178.76": {
-   "net": "residential",
+   "net": "unknown",
    "raw_net": "residential",
    "reason": {
-    "asn": {
-     "asn": 17676,
-     "in_hosting_list": false,
-     "at": "2026-11-09T22:21:01+00:00"
-    },
-    "hostname": {
-     "ptr": "softbank060086178076.bbtec.net",
-     "signal": "residential",
-     "matched": "bb",
-     "at": "2026-11-09T22:21:01+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-09T22:20:18+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -124213,22 +124768,22 @@
     "asn": {
      "asn": 9824,
      "in_hosting_list": false,
-     "at": "2026-10-24T15:56:30+00:00"
+     "at": "2026-11-12T00:43:03+00:00"
     },
     "hostname": {
      "ptr": "ka149161.knei.jp",
      "signal": null,
      "matched": null,
-     "at": "2026-10-24T15:56:30+00:00"
+     "at": "2026-11-12T00:43:03+00:00"
     },
     "unknown_sub": "insufficient"
    },
-   "checked_at": "2026-10-24T15:56:19+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-16T04:30:50+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-10-24T15:56:19+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "JP",
@@ -125596,6 +126151,35 @@
    "asn": 4766,
    "isp": "Korea Telecom"
   },
+  "61.80.26.203": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 4766,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:43:05+00:00"
+    },
+    "hostname": {
+     "ptr": null,
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:43:05+00:00"
+    },
+    "unknown_sub": "no-ptr"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "KR",
+   "asn": 4766,
+   "isp": "Korea Telecom"
+  },
   "61.80.73.168": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -126263,6 +126847,28 @@
    "asn": 9318,
    "isp": "SK Broadband Co Ltd"
   },
+  "62.133.35.246": {
+   "net": "datacenter",
+   "raw_net": "datacenter",
+   "reason": {
+    "asn": {
+     "asn": 3214,
+     "in_hosting_list": true,
+     "at": "2026-11-12T00:44:21+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "datacenter",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "DE",
+   "asn": 3214,
+   "isp": "xTom GmbH"
+  },
   "64.233.229.158": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -126626,6 +127232,35 @@
    "asn": 6327,
    "isp": "Shaw Communications"
   },
+  "71.9.253.30": {
+   "net": "unknown",
+   "raw_net": "unknown",
+   "reason": {
+    "asn": {
+     "asn": 20115,
+     "in_hosting_list": false,
+     "at": "2026-11-12T00:44:08+00:00"
+    },
+    "hostname": {
+     "ptr": "syn-071-009-253-030.res.spectrum.com",
+     "signal": null,
+     "matched": null,
+     "at": "2026-11-12T00:44:08+00:00"
+    },
+    "unknown_sub": "insufficient"
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "unknown",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "US",
+   "asn": 20115,
+   "isp": "Charter Communications LLC"
+  },
   "72.180.13.9": {
    "net": "unknown",
    "raw_net": "unknown",
@@ -126720,22 +127355,22 @@
     "asn": {
      "asn": 46650,
      "in_hosting_list": false,
-     "at": "2026-10-18T04:33:18+00:00"
+     "at": "2026-11-12T00:43:45+00:00"
     },
     "hostname": {
      "ptr": null,
      "signal": null,
      "matched": null,
-     "at": "2026-10-18T04:33:18+00:00"
+     "at": "2026-11-12T00:43:45+00:00"
     },
     "unknown_sub": "no-ptr"
    },
-   "checked_at": "2026-10-18T04:31:44+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
    "verdict_at": "2026-10-02T07:26:21+00:00",
    "streak": {
     "net": "unknown",
     "count": 99,
-    "first_at": "2026-10-18T04:31:44+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "steady",
    "cc": "GD",
@@ -127618,6 +128253,28 @@
    "cc": "RU",
    "asn": 12389,
    "isp": "PRIMORYE"
+  },
+  "77.35.6.152": {
+   "net": "datacenter",
+   "raw_net": "datacenter",
+   "reason": {
+    "asn": {
+     "asn": 12389,
+     "in_hosting_list": true,
+     "at": "2026-11-12T00:43:41+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "datacenter",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "RU",
+   "asn": 12389,
+   "isp": "PJSC Rostelecom"
   },
   "77.35.8.105": {
    "net": "unknown",
@@ -129583,14 +130240,12 @@
    "isp": "LLC \"KomTehCentr\""
   },
   "90.157.34.36": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 12668,
-     "in_hosting_list": true,
-     "at": "2026-11-03T23:24:29+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -130002,6 +130657,28 @@
    "cc": "RU",
    "asn": 51522,
    "isp": "Online LLC"
+  },
+  "92.100.221.237": {
+   "net": "datacenter",
+   "raw_net": "datacenter",
+   "reason": {
+    "asn": {
+     "asn": 12389,
+     "in_hosting_list": true,
+     "at": "2026-11-12T00:44:12+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "datacenter",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "RU",
+   "asn": 12389,
+   "isp": "PJSC Rostelecom"
   },
   "92.101.64.61": {
    "net": "unknown",
@@ -131085,24 +131762,26 @@
    "isp": "OCTOPUSNET-NAT"
   },
   "95.154.89.139": {
-   "net": "unknown",
+   "net": "datacenter",
    "raw_net": "datacenter",
    "reason": {
-    "stale": true,
-    "frozen_days": 8,
-    "note": "step6 freeze cap"
+    "asn": {
+     "asn": 44724,
+     "in_hosting_list": true,
+     "at": "2026-11-12T00:43:44+00:00"
+    }
    },
-   "checked_at": "2026-10-23T11:37:26+00:00",
-   "verdict_at": "2026-10-23T11:37:26+00:00",
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
    "streak": {
     "net": "datacenter",
     "count": 1,
-    "first_at": "2026-10-23T11:37:26+00:00"
+    "first_at": "2026-11-12T00:41:58+00:00"
    },
    "how": "demote-fast",
    "cc": "RU",
    "asn": 44724,
-   "isp": "OCTOPUSNET-SUBSCRIBERS"
+   "isp": "Octopusnet LTD"
   },
   "95.154.90.27": {
    "net": "unknown",
@@ -131501,14 +132180,12 @@
    "isp": "PJSC Rostelecom"
   },
   "95.70.75.118": {
-   "net": "datacenter",
+   "net": "unknown",
    "raw_net": "datacenter",
    "reason": {
-    "asn": {
-     "asn": 12389,
-     "in_hosting_list": true,
-     "at": "2026-11-03T23:24:48+00:00"
-    }
+    "stale": true,
+    "frozen_days": 8,
+    "note": "step6 freeze cap"
    },
    "checked_at": "2026-11-03T23:22:27+00:00",
    "verdict_at": "2026-11-03T23:22:27+00:00",
@@ -131541,6 +132218,28 @@
    "cc": "RU",
    "asn": 12389,
    "isp": "PJSC Rostelecom"
+  },
+  "95.78.41.109": {
+   "net": "datacenter",
+   "raw_net": "datacenter",
+   "reason": {
+    "asn": {
+     "asn": 42116,
+     "in_hosting_list": true,
+     "at": "2026-11-12T00:43:19+00:00"
+    }
+   },
+   "checked_at": "2026-11-12T00:41:58+00:00",
+   "verdict_at": "2026-11-12T00:41:58+00:00",
+   "streak": {
+    "net": "datacenter",
+    "count": 1,
+    "first_at": "2026-11-12T00:41:58+00:00"
+   },
+   "how": "first",
+   "cc": "RU",
+   "asn": 42116,
+   "isp": "JSC \"ER-Telecom Holding\""
   },
   "95.81.72.158": {
    "net": "unknown",
